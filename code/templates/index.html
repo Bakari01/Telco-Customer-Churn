@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Churn Prediction API</title>
+</head>
+<body>
+    <h1>Welcome to the Churn Prediction API</h1>
+    <p>To use this API, send a POST request to /predict with the required customer data.</p>
+    <p>For example, you can use the following Python code:</p>
+    <pre>
+import requests
+import json
+
+url = 'http://localhost:5000/predict'
+data = {
+    "seniorcitizen": 0,
+    "partner": "Yes",
+    "dependents": "No",
+    "tenure": 72,
+    "multiplelines": "Yes",
+    "internetservice": "Fiber optic",
+    "onlinesecurity": "No",
+    "onlinebackup": "Yes",
+    "deviceprotection": "No",
+    "techsupport": "No",
+    "streamingtv": "Yes",
+    "streamingmovies": "Yes",
+    "contract": "Two year",
+    "paperlessbilling": "Yes",
+    "paymentmethod": "Bank transfer (automatic)",
+    "monthlycharges": 99.65,
+    "totalcharges": 7105.10
+}
+
+response = requests.post(url, json=data)
+print(response.json())
+    </pre>
+</body>
+</html>

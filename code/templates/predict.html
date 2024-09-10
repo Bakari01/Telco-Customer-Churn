@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Churn Prediction</title>
+</head>
+<body>
+    <h1>Churn Prediction</h1>
+    <p>This endpoint is for making predictions via POST requests. To use the API, send a POST request to this URL with the required customer data in JSON format.</p>
+    <p>For example, you can use the following Python code:</p>
+    <pre>
+import requests
+import json
+
+url = 'http://localhost:5000/predict'
+data = {
+    "seniorcitizen": 0,
+    "partner": "Yes",
+    "dependents": "No",
+    "tenure": 72,
+    "multiplelines": "Yes",
+    "internetservice": "Fiber optic",
+    "onlinesecurity": "No",
+    "onlinebackup": "Yes",
+    "deviceprotection": "No",
+    "techsupport": "No",
+    "streamingtv": "Yes",
+    "streamingmovies": "Yes",
+    "contract": "Two year",
+    "paperlessbilling": "Yes",
+    "paymentmethod": "Bank transfer (automatic)",
+    "monthlycharges": 99.65,
+    "totalcharges": 7105.10
+}
+
+response = requests.post(url, json=data)
+print(response.json())
+    </pre>
+</body>
+</html>
